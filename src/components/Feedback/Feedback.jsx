@@ -8,7 +8,7 @@ export default function Feedback({ stats, totalFeedback }) {
   };
   return (
     <ul>
-      {...Object.entries(extendedStats).map(([key, value], id) => {
+      {Object.entries(extendedStats).map(([key, value], id) => {
         return (
           <li key={id} className={css.stat}>
             {key}: {value}

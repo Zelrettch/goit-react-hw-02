@@ -22,6 +22,21 @@ export default function App() {
     window.localStorage.setItem("stats", JSON.stringify(stats));
   }, [stats]);
 
+  function updateFeedback(option) {
+    setStats({
+      ...stats,
+      [option]: stats[option] + 1,
+    });
+  }
+
+  function resetFeedback() {
+    setStats({
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    });
+  }
+
   const totalFeedback = stats.good + stats.neutral + stats.bad;
 
   return (
@@ -29,7 +44,8 @@ export default function App() {
       <Description />
       <Options
         stats={stats}
-        setStats={setStats}
+        updateFeedback={updateFeedback}
+        handleReset={resetFeedback}
         totalFeedback={totalFeedback}
       />
       {totalFeedback ? (
