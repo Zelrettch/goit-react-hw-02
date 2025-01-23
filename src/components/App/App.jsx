@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-import "./App.css";
-import Description from "./components/Description/Description";
-import Feedback from "./components/Feedback/Feedback";
-import Options from "./components/Options/Options";
-import Notification from "./components/Notification/Notification";
+import css from "./App.module.css";
+import Description from "../Description/Description";
+import Feedback from "../Feedback/Feedback";
+import Options from "../Options/Options";
+import Notification from "../Notification/Notification";
 
 export default function App() {
   const [stats, setStats] = useState(() => {
@@ -25,7 +25,7 @@ export default function App() {
   const totalFeedback = stats.good + stats.neutral + stats.bad;
 
   return (
-    <div>
+    <div className={css.feedbackContainer}>
       <Description />
       <Options
         stats={stats}

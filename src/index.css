@@ -2,12 +2,6 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   font-size: 30px;
-  text-align: center;
-}
-
-#root {
-  display: inline-block;
-  text-align: left;
 }
 
 h1,
@@ -30,16 +24,4 @@ ol {
 img {
   display: block;
   max-width: 100%;
-}
-
-button {
-  text-transform: capitalize;
-}
-
-button:not(:last-child) {
-  margin-right: 10px;
-}
-
-li {
-  text-transform: capitalize;
 }

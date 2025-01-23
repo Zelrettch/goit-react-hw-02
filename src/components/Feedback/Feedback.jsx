@@ -1,3 +1,5 @@
+import css from "./Feedback.module.css";
+
 export default function Feedback({ stats, totalFeedback }) {
   const extendedStats = {
     ...stats,
@@ -8,7 +10,7 @@ export default function Feedback({ stats, totalFeedback }) {
     <ul>
       {...Object.entries(extendedStats).map(([key, value], id) => {
         return (
-          <li key={id}>
+          <li key={id} className={css.stat}>
             {key}: {value}
           </li>
         );

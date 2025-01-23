@@ -1,3 +1,5 @@
+import css from "./Options.module.css";
+
 export default function Options({ stats, setStats, totalFeedback }) {
   function updateFeedback(option) {
     setStats({
@@ -16,11 +18,19 @@ export default function Options({ stats, setStats, totalFeedback }) {
   return (
     <div>
       {Object.keys(stats).map((opt, id) => (
-        <button onClick={() => updateFeedback(opt)} key={id}>
+        <button
+          onClick={() => updateFeedback(opt)}
+          className={css.btn}
+          key={id}
+        >
           {opt}
         </button>
       ))}
-      {totalFeedback > 0 && <button onClick={handleReset}>reset</button>}
+      {totalFeedback > 0 && (
+        <button onClick={handleReset} className={css.btn}>
+          reset
+        </button>
+      )}
     </div>
   );
 }
